@@ -41,7 +41,7 @@ In a terminal window from the folder in which you added docker-compose.yml file
 ```shell
 docker-compose up --build
 ```
-* go to you browser and check : http://localhost:8000
+* go to your browser and check : http://localhost:8000
 
 * to stop all services :
 
