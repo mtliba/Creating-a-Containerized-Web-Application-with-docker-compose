@@ -19,11 +19,11 @@ autonomous services unlike the monolithic application , microservices modeled ar
 
 * my docker compose file :
 
-could to define and run multi-containers I’ve define two services :
-1-the web service in isolated container I named it ’php’ build it above the php:7.3.3-apache image . and
+   could to define and run multi-containers I’ve define two services :
+- 1-the web service in isolated container I named it ’php’ build it above the php:7.3.3-apache image . and
 mount it to php diroctory where exist my index.php using docker volume . and mapped
 the port 8000 for the container and the port 80 for the apache server by default. 
-2-the db sevice also in isolated container I name it ’mysql’ above the mysql:8.0 image
+- 2-the db sevice also in isolated container I name it ’mysql’ above the mysql:8.0 image
 aftreward to customize the boot of mysql I used a native password identification then
 restart the service if any configuration changed then I specified the environment with
 credentials to connect to mysql finally expose the local port 6033 and 3306 for mysql for
@@ -36,22 +36,24 @@ clone this repository :
 ```shell
 git clone https://github.com/mtliba/Creating-a-Containerized-Web-Application-with-docker-compose.git
 ```
-run the fellowing command :
- In a terminal window from the folder in which you added docker-compose.yml file
+* run the fellowing command :
+In a terminal window from the folder in which you added docker-compose.yml file
 ```shell
 docker-compose up --build
 ```
-to stop all services :
+* go to you browser and check : http://localhost:8000
+
+* to stop all services :
 
 ```shell
 docker-compose down
 ```
-to list images :
+* to list images :
 
 ```shell
 docker image ls
 ```
-to list Containers :
+* to list Containers :
 
 ```shell
 docker container ls -a
