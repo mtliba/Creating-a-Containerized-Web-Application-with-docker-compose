@@ -1,0 +1,25 @@
+version: "3.3"
+services:
+  web:
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    container_name: php
+    depends_on:
+      - db
+    volumes:
+      - ./php:/var/www/html/
+    ports:
+      - 8000:80
+  db:
+    container_name: mysql
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment: 
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cdweb
+      MYSQL_USER: maroine
+      MYSQL_PASSWORD: maroine
+    ports:
+      - 6033:3306
